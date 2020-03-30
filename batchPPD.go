@@ -51,9 +51,9 @@ func (batch *BatchPPD) Validate() error {
 			return batch.Error("AddendaCount", NewErrBatchAddendaCount(len(entry.Addenda05), 1))
 		}
 		// Verify the TransactionCode is valid for a ServiceClassCode
-		if err := batch.ValidTranCodeForServiceClassCode(entry); err != nil {
-			return err
-		}
+		//if err := batch.ValidTranCodeForServiceClassCode(entry); err != nil {
+		//	return err
+		//}
 		// Verify Addenda* FieldInclusion based on entry.Category and batchHeader.StandardEntryClassCode
 		if err := batch.addendaFieldInclusion(entry); err != nil {
 			return err
